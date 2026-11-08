@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="bs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Za Haruna ❤️</title>
+<style>
+:root{--forest:#183b2b;--deep:#10291f;--sage:#789477;--cream:#f5efdf;--paper:#fffaf0;--rust:#9b513e;--gold:#c6a56a;--ink:#26352b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:48px 22px;color:var(--cream);position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 110%,#52734e 0,transparent 45%),linear-gradient(155deg,#10291f,#244a35 65%,#6d7750)}
+.hero:before,.hero:after{content:"";position:absolute;width:340px;height:340px;border:1px solid #d8c69b33;border-radius:50%;top:-190px;left:-130px}.hero:after{top:auto;left:auto;right:-180px;bottom:-190px;width:460px;height:460px}
+.kicker{letter-spacing:.28em;text-transform:uppercase;font:11px Arial,sans-serif;color:#d6c39a}.hero h1{font-size:clamp(3rem,10vw,6.7rem);font-weight:400;line-height:.95;margin:22px 0 16px}.hero h1 em{color:#d8bd86;font-style:italic}.hero p{font-size:clamp(1rem,2.4vw,1.25rem);color:#e9e1d0;max-width:520px;line-height:1.7;margin:0 auto 30px}
+.heart{font-size:40px;display:inline-block;animation:beat 1.25s infinite;color:#d98b7c}@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.18)}30%{transform:scale(1)}45%{transform:scale(1.1)}}
+.btn{border:1px solid #d8bd86;background:transparent;color:inherit;padding:14px 24px;border-radius:2px;text-transform:uppercase;letter-spacing:.15em;font:11px Arial,sans-serif;cursor:pointer;transition:.25s}.btn:hover{background:#d8bd86;color:#182d22;transform:translateY(-2px)}
+main{max-width:1050px;margin:auto;padding:70px 22px}.intro{text-align:center;max-width:650px;margin:0 auto 44px}.eyebrow{font:10px Arial,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--rust)}h2{font-size:clamp(2rem,5vw,3.2rem);font-weight:400;margin:12px 0;color:var(--forest)}.intro p,.card p{line-height:1.8;color:#586457}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.tile{background:var(--paper);border:1px solid #dfd4bd;padding:25px 22px;min-height:220px;text-align:left;position:relative;overflow:hidden;cursor:pointer;transition:.25s}.tile:hover{transform:translateY(-5px);box-shadow:0 14px 35px #26352b18}.tile .num{font:10px Arial,sans-serif;letter-spacing:.2em;color:var(--rust)}.tile .symbol{font-size:34px;margin:24px 0 12px}.tile h3{font-size:1.5rem;font-weight:400;margin:0 0 8px;color:var(--forest)}.tile p{font-size:.92rem;margin:0}.tile .hint{font:10px Arial,sans-serif;text-transform:uppercase;letter-spacing:.16em;color:var(--rust);margin-top:18px}
+.scene{background:var(--forest);color:var(--cream);padding:48px 26px;margin:65px 0;text-align:center;position:relative;overflow:hidden}.scene:before{content:"";position:absolute;inset:12px;border:1px solid #d8bd8644;pointer-events:none}.scene h2{color:var(--cream)}.scene p{max-width:610px;margin:12px auto;line-height:1.8;color:#e0dfd0}.bull-wrap{height:112px;display:grid;place-items:center;position:relative;margin:8px auto 12px;width:180px}
+.bull{font-size:72px;display:inline-block;filter:drop-shadow(0 8px 5px #0004);animation:trot .72s ease-in-out infinite;transform-origin:50% 85%}
+.bull-dust{position:absolute;bottom:9px;left:22px;font-size:20px;opacity:0;animation:dust 1.1s ease-out infinite}
+.bull-dust.d2{left:auto;right:24px;animation-delay:.55s}
+@keyframes trot{0%,100%{transform:translateY(0) rotate(-3deg) scaleX(1)}25%{transform:translateY(-9px) rotate(2deg) scaleX(1.03)}50%{transform:translateY(0) rotate(-2deg) scaleX(1)}75%{transform:translateY(-5px) rotate(3deg) scaleX(.98)}}
+@keyframes dust{0%{transform:translate(0,0) scale(.5);opacity:0}35%{opacity:.65}100%{transform:translate(-14px,-16px) scale(1.5);opacity:0}}
+.game{background:linear-gradient(160deg,#fffaf0,#eee3cc);border:1px solid #dfd4bd;padding:32px 22px;margin:56px auto 64px;text-align:center;max-width:820px}
+.game h2{margin-bottom:8px}.game-intro{color:#586457;line-height:1.7;max-width:560px;margin:0 auto 18px}
+.game-hud{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;font:12px Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--forest);margin:14px 0}
+.game-hud strong{color:var(--rust);font-size:16px}.game-board{position:relative;max-width:620px;margin:0 auto;border:2px solid #c7b58f;border-radius:8px;overflow:hidden;background:linear-gradient(#dce8d2 0%,#edf0d9 65%,#8eaa72 65%,#718e5c 100%)}
+#gameCanvas{display:block;width:100%;height:auto;touch-action:none}.game-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px}.game-actions .btn{color:var(--forest);border-color:var(--forest)}.game-actions .btn:hover{background:var(--forest);color:var(--cream)}
+.game-message{min-height:28px;margin:12px 0 0;color:var(--rust);font-weight:bold}
+@media(max-width:720px){.game{padding:28px 12px;margin:42px auto}.game-hud{gap:12px;font-size:10px}}
+.overlay{position:fixed;inset:0;background:#0b1b14dd;display:none;place-items:center;padding:18px;z-index:5}.overlay.show{display:grid}.modal{width:min(620px,100%);max-height:88svh;overflow:auto;background:var(--paper);padding:38px 30px;position:relative;border:1px solid var(--gold);text-align:center}.modal h2{font-size:2.3rem}.modal p{line-height:1.9;color:#536052}.close{position:absolute;right:14px;top:12px;border:0;background:none;font-size:25px;color:var(--forest);cursor:pointer}.letter{background:#f3e8d1;padding:24px;text-align:left;border:1px solid #ddc9a5;margin-top:20px;line-height:1.9}
+footer{text-align:center;padding:30px 20px 55px;color:#697365;font-size:.9rem}footer span{color:var(--rust)}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.tile{min-height:180px}.hero{min-height:92svh}main{padding:55px 18px}.scene{margin:48px 0}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div>
+    <div class="kicker">jedna mala stranica, samo za tebe</div>
+    <div class="heart">♥</div>
+    <h1>Sretan rođendan,<br><em>Harune.</em></h1>
+    <p>Za čovjeka koji voli svoj posao i ima posebno mjesto u mom srcu.</p>
+    <button class="btn" onclick="document.getElementById('otkrij').scrollIntoView({behavior:'smooth'})">Započni otkrivanje ↓</button>
+  </div>
+</header>
+<main id="otkrij">
+  <div class="intro">
+    <div class="eyebrow">Dobro došao u svoj mali svijet</div>
+    <h2>Tri mala iznenađenja</h2>
+    <p>Ovdje nema običnih poklona. Samo nekoliko stvari koje sam pripremila baš za tebe. Klikni i otkrij ih redom — ili kako god želiš. ❤️</p>
+  </div>
+  <section class="grid">
+    <article class="tile" onclick="openModal('pismo')"><div class="num">01 / OD MENE</div><div class="symbol">💌</div><h3>Jedno pismo</h3><p>Nešto što želim da znaš, ne samo danas.</p><div class="hint">Otvori kovertu ↗</div></article>
+    <article class="tile" onclick="openModal('svijet')"><div class="num">02 / TVOJ SVIJET</div><div class="symbol">🐂</div><h3>Gazda svojih livada</h3><p>Malo o tvom svijetu — i zašto mi je baš drag.</p><div class="hint">Zaviriti unutra ↗</div></article>
+    <article class="tile" onclick="openModal('tajna')"><div class="num">03 / TAJNA</div><div class="symbol">🎁</div><h3>Još nešto...</h3><p>Za kraj sam sačuvala jednu malu tajnu.</p><div class="hint">Pronađi iznenađenje ↗</div></article>
+  </section>
+  <section class="scene">
+    <div class="eyebrow" style="color:#d8bd86">Tvoj komadić svijeta</div>
+    <div class="bull-wrap" aria-label="Animirani bik"><span class="bull">🐂</span><span class="bull-dust">✦</span><span class="bull-dust d2">✦</span></div>
+    <h2>Između livada i mog srca</h2>
+    <p>Volim što imaš nešto svoje, nešto čemu se posvetiš i oko čega se trudiš. Tvoje livade, tvoj posao, tvoj trud — sve je to dio tebe. A ja sam sretna što imam priliku upoznavati baš sve te tvoje strane.</p>
+  </section>
+  <section class="game" id="igra">
+    <div class="eyebrow">Mali rođendanski izazov</div>
+    <h2>Osvoji poljubac ❤️</h2>
+    <p class="game-intro">UhvatI 10 srca, a pazi da ti bale sijena ne pobjegnu u korpu! Pomjeraj korpu strelicama na tastaturi ili dugmadima ispod.</p>
+    <div class="game-hud"><span>Srca: <strong id="score">0 / 10</strong></span><span>Propuštena: <strong id="missed">0</strong></span></div>
+    <div class="game-board"><canvas id="gameCanvas" width="620" height="300" aria-label="Igra hvatanja srca"></canvas></div>
+    <div class="game-actions">
+      <button class="btn" id="leftBtn" aria-label="Pomjeri lijevo">← Lijevo</button>
+      <button class="btn" id="startGame">Započni igru</button>
+      <button class="btn" id="rightBtn" aria-label="Pomjeri desno">Desno →</button>
+    </div>
+    <p class="game-message" id="gameMessage">Spreman? Skupi 10 srca za svoju nagradu. 💋</p>
+  </section>
+  <div class="intro">
+    <div class="eyebrow">Za kraj, samo ovo</div>
+    <h2>Ti si moj najdraži izbor.</h2>
+    <p>Neka ti nova godina života donese zdravlja, sreće, uspjeha, dobrih ljudi i mnogo razloga za osmijeh. A ja se nadam da ću biti tu da s tobom proslavim još mnogo rođendana.</p>
+    <div class="heart">♥</div>
+  </div>
+</main>
+<footer>Napravljeno s ljubavlju, <span>samo za Haruna.</span></footer>
+<div class="overlay" id="overlay" onclick="if(event.target===this)closeModal()">
+ <div class="modal"><button class="close" onclick="closeModal()" aria-label="Zatvori">×</button><div id="modalContent"></div></div>
+</div>
+<script>
+const content={
+pismo:`<div class="eyebrow">01 / Pismo</div><h2>Za mog Haruna</h2><div class="letter">Sretan rođendan, ljubavi moja! ❤️<br><br>Želim ti da uvijek budeš sretan, zdrav, nasmijan i da ti se ostvari sve ono o čemu sanjaš. Da kroz život ideš hrabro, da nikada ne izgubiš tu svoju posebnost i da uvijek imaš razloga za osmijeh. Želim ti mnogo uspjeha, lijepih trenutaka i svega onoga što zaslužuješ, a zaslužuješ samo najbolje.<br><br>Ne znam ni kako da ti opišem koliko sam sretna što te imam u svom životu. Hvala ti za svu ljubav, pažnju, zagrljaje, smijeh i sve one male stvari koje možda nekad i ne primijetiš, a meni znače više nego što misliš. Hvala ti što si baš ti moja osoba, moj mir, moja sreća i neko s kim želim dijeliti i najljepše i najteže dane.<br><br>Želim da zajedno dočekamo još mnogo tvojih rođendana, da stvaramo uspomene, ostvarujemo planove, putujemo, smijemo se i prolazimo kroz sve što nam život donese. Da uvijek budemo jedno drugom podrška i da nikada ne zaboravimo koliko je lijepo imati nekoga svog.<br><br>Volim te najviše i nadam se da će ti ova godina donijeti mnogo razloga za sreću. Sretan rođendan, jubii mooj! ❤️</div>`,
+svijet:`<div class="eyebrow">02 / Tvoj svijet</div><div class="bull-wrap"><span class="bull">🐂</span><span class="bull-dust">✦</span><span class="bull-dust d2">✦</span></div><h2>Čovjek koji gradi svoje</h2><p>Znam koliko ti znači tvoj posao i sve što radiš oko njega. Iza toga su trud, strpljenje i ljubav prema onome što je tvoje. Zato danas slavim i sve ono što jesi: vrijednog, upornog i posebnog čovjeka.</p><p><strong>Neka ti svaka naredna godina bude plodna kao najljepša livada.</strong></p>`,
+tajna:`<div class="eyebrow">03 / Mala tajna</div><div class="heart" style="font-size:58px">♥</div><h2>Moja želja za tebe</h2><p>Da nikada ne izgubiš ono što te čini tobom. Da uvijek imaš snage za svoje snove, mira u srcu i nekoga ko će navijati za tebe čak i onda kada ti sam posumnjaš u sebe.</p><p>I da znaš — među svim lijepim stvarima koje život može donijeti, ja sam najsretnija što je meni donio tebe.</p><p style="font-size:1.3rem;color:#9b513e">Sretno ti, ljubavi. ❤️</p>`
+};
+function openModal(key){document.getElementById('modalContent').innerHTML=content[key];document.getElementById('overlay').classList.add('show');document.body.style.overflow='hidden'}
+function closeModal(){document.getElementById('overlay').classList.remove('show');document.body.style.overflow=''}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+// Rođendanska igrica: uhvati 10 srca i izbjegni bale sijena.
+(()=>{
+ const canvas=document.getElementById('gameCanvas'); if(!canvas)return;
+ const ctx=canvas.getContext('2d'), scoreEl=document.getElementById('score'), missedEl=document.getElementById('missed'), msg=document.getElementById('gameMessage');
+ const W=canvas.width,H=canvas.height; let player={x:W/2,y:H-35,w:76,h:22},items=[],score=0,missed=0,running=false,raf=0,last=0,spawn=0,keys={};
+ function drawBackground(){ctx.clearRect(0,0,W,H);ctx.fillStyle='#dce8d2';ctx.fillRect(0,0,W,H);ctx.fillStyle='#edf0d9';ctx.fillRect(0,190,W,110);ctx.fillStyle='#91a977';ctx.fillRect(0,238,W,62);ctx.fillStyle='#789467';for(let x=12;x<W;x+=35){ctx.beginPath();ctx.moveTo(x,240);ctx.lineTo(x-5,226);ctx.lineTo(x+2,234);ctx.lineTo(x+8,222);ctx.lineTo(x+7,240);ctx.fill();}}
+ function drawPlayer(){ctx.fillStyle='#8b573d';ctx.beginPath();ctx.roundRect(player.x-player.w/2,player.y,player.w,player.h,7);ctx.fill();ctx.strokeStyle='#5c3829';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(player.x-player.w/2+12,player.y+3);ctx.lineTo(player.x-player.w/2+12,player.y-7);ctx.moveTo(player.x+player.w/2-12,player.y+3);ctx.lineTo(player.x+player.w/2-12,player.y-7);ctx.stroke();ctx.fillStyle='#f5efdf';ctx.font='20px Georgia';ctx.textAlign='center';ctx.fillText('♥',player.x,player.y+17);}
+ function drawItem(o){ctx.textAlign='center';if(o.type==='heart'){ctx.font='27px Arial';ctx.fillText('❤️',o.x,o.y);}else{ctx.font='27px Arial';ctx.fillText('🌾',o.x,o.y);}}
+ function update(dt){if(keys.left)player.x-=.42*dt;if(keys.right)player.x+=.42*dt;player.x=Math.max(player.w/2,Math.min(W-player.w/2,player.x));spawn+=dt;if(spawn>650){spawn=0;items.push({x:25+Math.random()*(W-50),y:-20,type:Math.random()<.72?'heart':'hay',speed:1.7+Math.random()*1.5});}
+ items.forEach(o=>{o.y+=o.speed*dt*.055;if(o.y>player.y-2&&o.y<player.y+player.h+20&&Math.abs(o.x-player.x)<player.w/2+15){if(o.type==='heart')score++;else missed++;o.hit=true;}if(o.y>H+20){if(o.type==='heart')missed++;o.hit=true;}});items=items.filter(o=>!o.hit);scoreEl.textContent=score+' / 10';missedEl.textContent=missed;
+ if(score>=10){finish(true);return;}if(missed>=8){finish(false);return;}}
+ function frame(t){if(!running)return;let dt=Math.min(35,t-last||16);last=t;update(dt);draw();if(running)raf=requestAnimationFrame(frame);}
+ function draw(){drawBackground();items.forEach(drawItem);drawPlayer();}
+ function finish(win){running=false;cancelAnimationFrame(raf);msg.innerHTML=win?'BRAVOOO! Osvojio si milion poljubaca! Volim te, jubii mooj! ❤️💋':'Uh, pobjeglo je previše srca! Pokušaj ponovo — poljupci te čekaju. ❤️';if(win){for(let i=0;i<32;i++){let x=Math.random()*W,y=Math.random()*H;ctx.font='20px Arial';ctx.fillText(i%2?'❤️':'✨',x,y);}}}
+ function start(){cancelAnimationFrame(raf);score=0;missed=0;items=[];spawn=0;player.x=W/2;running=true;last=0;msg.textContent='Hvataj srca, izbjegavaj sijeno!';draw();raf=requestAnimationFrame(frame);}
+ function drawIdle(){drawBackground();drawPlayer();ctx.fillStyle='#35533a';ctx.font='bold 18px Georgia';ctx.textAlign='center';ctx.fillText('UhvatI 10 srca! ❤️',W/2,105);}
+ document.getElementById('startGame').addEventListener('click',start);
+ document.getElementById('leftBtn').addEventListener('pointerdown',e=>{e.preventDefault();keys.left=true});document.getElementById('leftBtn').addEventListener('pointerup',()=>keys.left=false);document.getElementById('leftBtn').addEventListener('pointerleave',()=>keys.left=false);
+ document.getElementById('rightBtn').addEventListener('pointerdown',e=>{e.preventDefault();keys.right=true});document.getElementById('rightBtn').addEventListener('pointerup',()=>keys.right=false);document.getElementById('rightBtn').addEventListener('pointerleave',()=>keys.right=false);
+ window.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key.toLowerCase()==='a')keys.left=true;if(e.key==='ArrowRight'||e.key.toLowerCase()==='d')keys.right=true;});window.addEventListener('keyup',e=>{if(e.key==='ArrowLeft'||e.key.toLowerCase()==='a')keys.left=false;if(e.key==='ArrowRight'||e.key.toLowerCase()==='d')keys.right=false;});
+ drawIdle();
+})();
+</script>
+</body></html>
